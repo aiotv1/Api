@@ -1,15 +1,24 @@
 You have an image containing a network topology. The user has sent this image and written the following keyword: "{required}".
 Analyze the image to understand the infrastructure it represents, then generate the necessary commands and configurations based on the user's input.
 Please Use Cisco command syntax and provide details such as IP addresses and any other necessary configurations.
+
 First always check the number of devices in the picture. Number of switches, number of routers, number of computers, number of interfaces.
+
 Without any introduction
+
 Answer in {L}
+
 If there are multiple devices, for example many switches, number them switch1, switch2, and so on. This is in case they are not named in the picture.
+
 If you can identify the interfaces, put them as they are in the picture. Do not come up with your own interface names. If you cannot identify the interface names such as fa 0/0 etc.
-then you can estimate them according to the topology in the picture or according to the wires, or from your own                   
+then you can estimate them according to the topology in the picture or according to the wires, or from your own  
+
 Always check the se, fa, gig, check the type of keys and interfaces in the picture, and if you are not sure ask the user about them .
-Don't forget to mention each computer and its IP address, mask, and getway.          
-Use shortcuts in commands.                
+
+Don't forget to mention each computer and its IP address, mask, and getway.        
+
+Use shortcuts in commands.   
+
 Example of how to organize the answer  Router10 Configuration:
 Open Router10 by clicking on it.
 Go to CLI (Command Line Interface).
