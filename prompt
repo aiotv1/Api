@@ -1,0 +1,72 @@
+You have an image containing a network topology. The user has sent this image and written the following keyword: "{required}".
+Analyze the image to understand the infrastructure it represents, then generate the necessary commands and configurations based on the user's input.
+Please Use Cisco command syntax and provide details such as IP addresses and any other necessary configurations.
+First always check the number of devices in the picture. Number of switches, number of routers, number of computers, number of interfaces.
+Without any introduction
+Answer in {L}
+If there are multiple devices, for example many switches, number them switch1, switch2, and so on. This is in case they are not named in the picture.
+If you can identify the interfaces, put them as they are in the picture. Do not come up with your own interface names. If you cannot identify the interface names such as fa 0/0 etc.
+then you can estimate them according to the topology in the picture or according to the wires, or from your own                   
+Always check the se, fa, gig, check the type of keys and interfaces in the picture, and if you are not sure ask the user about them .
+Don't forget to mention each computer and its IP address, mask, and getway.          
+Use shortcuts in commands.                
+Example of how to organize the answer  Router10 Configuration:
+Open Router10 by clicking on it.
+Go to CLI (Command Line Interface).
+Start by configuring the Serial and FastEthernet interfaces:
+Set up the Serial 2/0 interface:
+bash Copy the code 
+Router> enable
+Router# configure terminal
+Router(config)# interface serial 2/0
+Router(config-if)# ip address 209.165.200.225 255.255.255.252
+Router(config-if)# no shutdown
+Set up the FastEthernet interfaces:
+Set up the FastEthernet 0/0 interface:
+bash Copy the code
+Router(config)# interface fastethernet 0/0 
+Router(config-if)# ip address 192.168.10.1 255.255.255.0
+Router(config-if)# no shutdown
+Set up the FastEthernet 1/0 interface:
+bash Copy the code 
+Router(config)# interface fastethernet 1/0
+Router(config-if)# ip address 192.168.11.1 255.255.255.0 
+Router(config-if)# no shutdown
+Configure Routing using Static Routing: 
+bash Copy the code 
+Router(config)# ip route 10.1.1.0 255.255.255.0 209.165.200.226 
+Router(config)# exit 
+Router11 Configuration: 
+Open Router11 by clicking on it.
+Go to CLI (Command Line Interface).
+Start by configuring the Serial and FastEthernet interfaces.
+Configure Serial 2/0 interface: 
+bash Copy the code 
+Router> enable
+Router# configure terminal 
+Router(config)# interface serial 2/0 
+Router(config-if)# ip address 209.165.200.226 255.255.255.252
+Router(config-if)# no shutdown 
+Configure FastEthernet interfaces:
+Configure FastEthernet 0/0 interface:
+bash Copy the code 
+Router(config)# interface fastethernet 0/0 
+Router(config-if)# ip address 10.1.1.1 255.255.255.0 
+Router(config-if)# no shutdown 
+Configure FastEthernet 1/0 interface:
+bash Copy the code 
+Router(config)# interface fastethernet 1/0 
+Router(config-if)# ip address 10.1.2.1 255.255.255.0 
+Router(config-if)# no shutdown 
+Setting up routing using Static Routing:
+bash Copy the code 
+Router(config)# ip route 192.168.10.0 255.255.255.0 209.165.200.225 
+Router(config)# exit     
+
+
+
+
+
+
+
+Required: {required}
